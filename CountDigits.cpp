@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-//Time complexity = O(d) d-no og digits
+//Time complexity = O(d) d-no of digits
 
 int countDigits(long num)
 {
