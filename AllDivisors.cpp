@@ -4,6 +4,20 @@
 #include<algorithm>
 using namespace std;
 
+void efficientPrintDivisors(int num){
+    int i;
+    cout<<"All divisors/factors of the given number\n";
+    for(i=1;i*i<num;i++){          //includes of 1
+        if(num%i==0){
+            cout<<i<<" ";
+        }
+    }
+    for(;i<=num;i++){            //includes num
+        if(num%i==0)
+            cout<<i<<" ";
+    }
+}
+
 void printAllFactors(int n){
     vector<int> factors;
     for(int i=1;i*i<=n;i++){
@@ -13,7 +27,7 @@ void printAllFactors(int n){
                 factors.push_back(n/i);
         }
     }
-    sort(factors.begin(),factors.end());
+    sort(factors.begin(),factors.end()); //This takes O(nlogn) which is more than O(sqrt(n))
     for(auto itr = factors.begin(); itr!=factors.end();itr++){
         cout<<*itr<<" ";
     }
@@ -24,6 +38,7 @@ int main(){
     int n;
     cout<<"Enter a number: ";
     cin>>n;
-    printAllFactors(n);
+    //printAllFactors(n);
+    efficientPrintDivisors(n);
     return 0;
 }
