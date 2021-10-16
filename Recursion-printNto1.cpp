@@ -2,7 +2,9 @@
 #include<iostream>
 using namespace std;
 
-//Time complexity: O(n)
+//Time complexity: O(n) for both
+
+//Tail recursive function, so faster in modern compilers cuz replaced with goto statements
 void printNto1(int n){
     if(n==0)
         return;
@@ -12,6 +14,7 @@ void printNto1(int n){
     printNto1(n-1);
 }
 
+//Non-Tail recursive function,
 void print1toN(int n){
     if(n==0)
         return;
